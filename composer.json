@@ -1,0 +1,26 @@
+{
+    "name": "mukadi/api-acess-bundle",
+    "description": "This bundle help you to handle client access to your API. Bundle let you manage clients and handle authentication to the API.",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name" : "Olivier M. Mukadi",
+            "email" : "mbo2olivier@gmail.com",
+            "homepage": "http://www.virtualconsultafrica.com"
+        }
+    ],
+    "keywords" : [
+        "symfony bundle", "API access", "client api management","API authentication"
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "~2.1",
+        "symfony/security-bundle": "~2.1"
+    },
+    "autoload" : {
+        "psr-4" : {
+            "Mukadi\\APIAccessBundle\\" : ""
+        }
+    }
+}

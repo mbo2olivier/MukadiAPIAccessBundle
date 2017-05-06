@@ -1,0 +1,3 @@
+mukadi_api_access_homepage:
+    path:     /
+    defaults: { _controller: MukadiAPIAccessBundle:Default:index }
