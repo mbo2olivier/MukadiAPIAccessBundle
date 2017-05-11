@@ -14,7 +14,7 @@
         "symfony bundle", "API access", "client api management","API authentication"
     ],
     "require": {
-        "php": ">=5.3.2",
+        "php": ">=5.3.7",
         "symfony/framework-bundle": "~2.1",
         "symfony/security-bundle": "~2.1"
     },

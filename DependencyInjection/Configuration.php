@@ -20,9 +20,30 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('mukadi_api_access');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $supportedDrivers = array('orm');
+
+        $rootNode
+            ->children()
+                ->scalarNode('driver')
+                    ->validate()
+                        ->ifNotInArray($supportedDrivers)
+                        ->thenInvalid("The driver %s is not supported. Please choose one of ".json_encode($supportedDrivers))
+                    ->end()
+                    ->cannotBeOverwritten()
+                    ->isRequired()
+                    ->cannotBeEmpty()
+                ->end()
+                ->arrayNode('clients')
+                    ->fixXmlConfig('client')
+                    ->prototype('array')
+                        ->children()
+                            ->scalarNode('client_class')->isRequired()->cannotBeEmpty()->end()
+                            ->scalarNode('client_manager')->defaultNull()->end()
+                            ->scalarNode('client_provider')->defaultNull()->end()
+                        ->end()
+                    ->end()
+                ->end()
+            ->end();
 
         return $treeBuilder;
     }
