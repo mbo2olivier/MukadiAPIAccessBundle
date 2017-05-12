@@ -39,7 +39,7 @@ abstract class MacAuthenticator extends ApiAuthenticator{
                     throw new BadCredentialsException("Request signature is invalid",ApiAuthenticator::REQUEST_FAIL_AUTHENTICATED);
                 }
             }else{
-                throw new BadCredentialsException(sprintf("Cannot find client for ID \"%s\"",$client_id),ApiAuthenticator::UNKNOWN_REQUEST_SENDER);
+                throw new BadCredentialsException(sprintf('Cannot find client for ID "%s"',$client_id),ApiAuthenticator::UNKNOWN_REQUEST_SENDER);
             }
         }
     }

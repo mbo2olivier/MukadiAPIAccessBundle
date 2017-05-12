@@ -76,7 +76,7 @@ class ClientManager implements ClientManagerInterface {
      */
     public function find($client_id)
     {
-        $this->repo->findOneBy(array('client_id' => $client_id));
+        return $this->repo->findOneBy(array('client_id' => $client_id));
     }
 
 
