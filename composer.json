@@ -1,5 +1,5 @@
 {
-    "name": "mukadi/api-acess-bundle",
+    "name": "mukadi/api-access-bundle",
     "description": "This bundle help you to handle client access to your API. Bundle let you manage clients and handle authentication to the API.",
     "type": "symfony-bundle",
     "license": "MIT",
